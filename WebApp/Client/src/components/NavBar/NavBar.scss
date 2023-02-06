@@ -1,123 +1,121 @@
 @import "../../styles/variables.scss";
 
 .navbar-main-div {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 80px;
-    background-color: $main-background;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	padding: 25px 80px;
+	background-color: $main-background;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
 
-    .navbar-logo {
-        a {
-            text-decoration: none;
+	.navbar-logo {
+		a {
+			text-decoration: none;
 
-            h1 {
-                font-family: $title-police;
-                font-size: 32px;
-                color: $main-color;
-            }
-        }
-    }
+			h1 {
+				font-family: $title-police;
+				font-size: 32px;
+				color: $main-color;
+			}
+		}
+	}
 
-    .navbar-links {
-        display: flex;
-        gap: 20px;
-        padding-top: 13px;
-        font-family: $title-police;
+	.navbar-links {
+		display: flex;
+		gap: 20px;
+		padding-top: 13px;
+		font-family: $title-police;
+		.nav-links-items {
+			a {
+				text-decoration: none;
+				color: rgb(100, 100, 100);
 
-        .nav-links-items {
-            a {
-                text-decoration: none;
-                color: rgb(100, 100, 100);
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.navbar-lang {
+			display: flex;
+			gap: 5px;
+			cursor: pointer;
 
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
+			&:hover .navbar-dropdown {
+				display: block;
+			}
 
-        .navbar-lang {
-            display: flex;
-            gap: 5px;
-            cursor: pointer;
+			#nav-lang-icon {
+				height: 22px;
+				width: 22px;
+			}
 
-            &:hover .navbar-dropdown {
-                display: block;
-            }
+			#nav-arrow-icon {
+				margin-top: 5px;
+				height: 15px;
+				width: 15px;
+			}
 
-            #nav-lang-icon {
-                height: 22px;
-                width: 22px;
-            }
+			.navbar-dropdown {
+				width: 100px;
+				display: none;
+				padding: 5px;
+				position: absolute;
+				top: 65px;
+				right: calc(15% + 5px);
+				background-color: white;
+				border: 2px solid rgb(200, 200, 200);
+				border-radius: 10px;
+				text-align: center;
+				gap: 10px;
+				-webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+				-moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+				box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
 
-            #nav-arrow-icon {
-                margin-top: 5px;
-                height: 15px;
-                width: 15px;
-            }
+				.selected-lang {
+					p {
+						font-weight: 600;
+						color: $main-color;
+						padding: 5px;
+					}
+				}
 
-            .navbar-dropdown {
-                width: 100px;
-                display: none;
-                padding: 5px;
-                position: absolute;
-                top: 65px;
-                right: calc(15% + 5px);
-                background-color: white;
-                border: 2px solid rgb(200, 200, 200);
-                border-radius: 10px;
-                text-align: center;
-                gap: 10px;
-                -webkit-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
-                box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+				.other-languages {
+					display: flex;
+					flex-direction: column;
+					gap: 5px;
 
-                .selected-lang {
-                    p {
-                        font-weight: 600;
-                        color: $main-color;
-                        padding: 5px;
-                    }
-                }
+					p {
+						color: rgb(120, 120, 120);
+						border-radius: 10px;
+						padding: 5px;
 
-                .other-languages {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
+						&:hover {
+							color: $main-color;
+							background-color: rgb(240, 240, 240);
+						}
+					}
+				}
+			}
+		}
 
-                    p {
-                        color: rgb(120, 120, 120);
-                        border-radius: 10px;
-                        padding: 5px;
+		.vertical-line {
+			width: 0.5px;
+			height: 20px;
+			background-color: rgb(200, 200, 200);
+			margin-top: 3px;
+		}
 
-                        &:hover {
-                            color: $main-color;
-                            background-color: rgb(240, 240, 240);
-                        }
-                    }
-                }
-            }
-        }
+		.nav-login-link {
+			a {
+				text-decoration: none;
+				color: rgb(100, 100, 100);
 
-        .vertical-line {
-            width: 0.5px;
-            height: 20px;
-            background-color: rgb(200, 200, 200);
-            margin-top: 3px;
-        }
-
-        .nav-login-link {
-            a {
-                text-decoration: none;
-                color: rgb(100, 100, 100);
-
-                &:hover {
-                    color: $main-color;
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
+				&:hover {
+					color: $main-color;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
