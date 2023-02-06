@@ -6,7 +6,7 @@ import SideBar from "../../components/SideBar/SideBar";
 function UserAppLayout(){
     return(
         <>
-            <SideBar />
+            {/* <SideBar />  */}
             <Suspense>
                 <Outlet />
             </Suspense>

@@ -7,7 +7,7 @@ import FooterBar from "../../components/FooterBar/FooterBar";
 function WebsiteLayout(){
     return(
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <Suspense>
                 <Outlet />
             </Suspense>

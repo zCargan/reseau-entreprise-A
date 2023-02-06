@@ -1,2 +1,198 @@
-@import "../../../styles/variables.scss"
+@import "../../../styles/variables.scss";
 
+.login__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// border: solid red 1px;
+	height: 100vh;
+	@media (min-width: 768px) {
+		& {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			height: 100vh;
+		}
+	}
+	.login__content {
+		// border: solid blue 1px;
+		background-color: #f5f5f5;
+		display: flex;
+		flex-direction: column;
+		height: 80%;
+		margin: auto;
+		width: 500px;
+		@media (min-width: 768px) {
+			& {
+				width: 650px;
+			}
+		}
+		padding: 15px;
+		border-radius: 5px;
+		.login__header {
+			// border: solid red 1px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+			padding: 5px;
+			@media (max-height: 668px) {
+				& {
+					height: auto;
+				}
+			}
+			.login__form {
+				/* border: solid red 1px; */
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 60%;
+
+				input {
+					@media (max-width: 768px) {
+						& {
+							height: 45px;
+							padding: 10px;
+						}
+					}
+					width: 100%;
+					height: 45px;
+					font-size: 14px;
+					margin: 15px 0;
+					padding-left: 15px;
+					border-radius: 28px;
+					border: none;
+					background-color: #c8c7c7;
+					&:focus {
+						outline: none;
+						box-shadow: 0 0 10px $main-color; //rgba(0, 0, 0, 0.7);
+					}
+				}
+			}
+			.login__send {
+				// border: solid #ed1b0d 0.5px;
+				@media (max-width: 768px) {
+					& {
+						height: 56px;
+						padding: 10px;
+					}
+				}
+				font-family: $text-police;
+				// text-align: center;
+				background-color: transparent;
+				height: 56px;
+				font-size: 20px;
+				border-radius: 28px;
+				padding: 10px;
+				margin: 10px 0;
+				color: #f5f5f5;
+				border: none;
+				background-color: $main-color;
+				vertical-align: middle;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				z-index: 0;
+				transition-duration: 167ms;
+				cursor: pointer;
+				box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%),
+					inset 0 0 0 2px rgb(0 0 0 / 0%),
+					inset 0 0 0 1px rgb(0 0 0 / 0%);
+				&:hover {
+					transition-duration: 0.5s;
+					background: #287fe8;
+					color: #ffffff; //rgba(0, 0, 0, 0.75);
+				}
+			}
+			.login__google {
+				img {
+					// border: solid red 1px;
+					margin-right: 5px;
+				}
+				// border: solid red 1px;
+				@media (max-width: 768px) {
+					& {
+						height: 56px;
+						padding: 10px;
+					}
+				}
+				display: flex;
+				justify-content: center; //si flex-direction sur la row aligne sur l'horizontale
+				background-color: #fff;
+				align-items: center; // si flex-direction en row , align sur la vertical
+				width: 100%;
+				height: 56px;
+				padding: 10px;
+				border-radius: 28px;
+				box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%),
+					inset 0 0 0 2px rgb(0 0 0 / 0%),
+					inset 0 0 0 1px rgb(0 0 0 / 0%);
+
+				/**BOX SHADOW INSET NOUS PERMET DAVOIR UN EFFET INTERIEUR SUR LES BORDURE */
+				vertical-align: middle;
+				z-index: 0;
+				transition-duration: 167ms;
+				font-size: 20px;
+				color: rgba(0, 0, 0, 0.6);
+				&:hover {
+					background-color: rgba(207, 207, 207, 0.25);
+					color: rgba(0, 0, 0, 0.75);
+				}
+				font-family: $text-police;
+				cursor: pointer;
+			}
+			.login__connection {
+				font-size: 16px;
+				flex: 0.1;
+				color: #000000;
+				margin-top: 10px;
+				text-align: center;
+				font-family: $text-police;
+			}
+			.login__title {
+				// border: solid red 1px;
+				width: 100%;
+				font-size: 30px;
+				// text-align: center;
+				font-family: $text-police;
+				font-weight: bold;
+				color: $main-color;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 10px;
+				margin-bottom: 20px;
+				img {
+					width: 8%;
+					// border: solid red 1px;
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+	.login__wave {
+		display: none;
+	}
+	@media (max-width: 645px) {
+		.login__content {
+			height: 100%;
+			width: 100%;
+			padding-bottom: 25%;
+		}
+		.login__wave {
+			position: absolute;
+			display: block;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0;
+			padding: 0;
+			// bottom: 0;
+		}
+	}
+}
