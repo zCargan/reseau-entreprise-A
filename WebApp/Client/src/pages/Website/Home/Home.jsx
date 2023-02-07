@@ -3,6 +3,8 @@ import "./Home.scss"
 //svg's
 import {ReactComponent as Wave} from "../../../assets/icons/wave.svg";
 import {ReactComponent as SvgIcon} from "../../../assets/icons/web-icon.svg";
+import {ReactComponent as DashboardSvg} from "../../../assets/icons/Schedule-amico.svg"
+
 
 function Home(){
     return(
@@ -26,6 +28,7 @@ function Home(){
                 </div>
             </div>
             <AboutUs />
+            <DashBoard />
         </div>
     )
 }
@@ -43,6 +46,21 @@ const AboutUs = () => {
                 <p>enable you to learn the job of your choice in the way that suits you.</p>
             </div>
             <button>Start now</button>
+        </div>
+    )
+}
+
+const DashBoard = () => {
+    return(
+        <div className="dashboard-div">
+            <div>
+                <h1>Your own dashboard</h1>
+                <h3>To manage all your work and lessons</h3>
+                <p>Learn by your own without pressure and only when you want</p>
+            </div>
+            <div>
+                <DashboardSvg id="dashboard-icon"/>
+            </div>
         </div>
     )
 }

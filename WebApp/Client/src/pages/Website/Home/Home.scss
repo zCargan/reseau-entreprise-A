@@ -24,7 +24,7 @@
             align-items: center;
             justify-content: center;
             display: flex;
-            gap: calc(10% + 30px);
+            gap: calc(5% + 30px);
             padding: 100px 75px;
 
             .text-description {
@@ -97,6 +97,40 @@
 
         button {
             @include classic-button;
+        }
+    }
+
+    .dashboard-div {
+        display: flex;
+        gap: calc(10% + 25px);
+        align-items: center;
+        justify-content: center;
+        background-color: $main-background;
+        padding: 50px 120px;
+
+        div {
+            #dashboard-icon {
+                height: 400px;
+                width: 400px;
+            }
+
+            h1 {
+                font-family: $title-police;
+                font-size: 32px;
+                color: $main-color;
+                padding-bottom: 10px;
+            }
+
+            h3 {
+                font-family: $title-police;
+                font-size: 26px;
+                padding-bottom: 5px;
+            }
+
+            p {
+                font-family: $text-police;
+                font-family: 20px;
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ import {lazy} from "react"
 import WebsiteLayout from "../pages/Website/WebsiteLayout";
 
 import UserAppLayout from "../pages/UserApp/UserAppLayout";
+import NoPages from "../components/NoPages/NoPages";
 
 
 //-----------------------------WEBSITE PAGES---------------
@@ -31,6 +32,7 @@ function App() {
                     <Route index element={<MyCourses />} />
                     <Route path="search" element={<Search />} />
                 </Route>
+                <Route path="*" element={<NoPages />} />
             </Routes>
         </>
     )
