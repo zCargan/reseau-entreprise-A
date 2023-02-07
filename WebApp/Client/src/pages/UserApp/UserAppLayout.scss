@@ -1,0 +1,8 @@
+@import "../../styles/variables.scss";
+
+.user_app {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	max-width: 1600px;
+}

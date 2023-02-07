@@ -4,14 +4,17 @@
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	outline: 1px solid black;
+	border: 1px solid rgba(0, 0, 0, 0.15);
 	width: max-content;
-	// padding: 15px 25px;
+	position: relative;
+	color: $secondary-color;
+	background-color: $main-background;
+
 	.logo_title {
 		display: flex;
 		// gap: 5%;
 		width: max-content;
-		padding: 25px;
+		padding: 15px 25px;
 		position: relative;
 		.logo {
 			min-width: 25px;
@@ -20,15 +23,97 @@
 			margin-left: 10px;
 			width: max-content;
 			font-size: 25px;
+			color: $main-color;
+			font-family: $title-police;
+			transition: 0.1s ease;
+			text-decoration: none;
+		}
+		.logo_text:hover {
+			transform: scale(1.03);
+			transition: 0.2s ease;
 		}
 	}
 	.logo_title::after {
 		height: 1px;
-		width: 80%;
-		left: 10%;
+		width: 90%;
+		left: 5%;
 		top: 100%;
-		background: black;
+		background: rgba(0, 0, 0, 0.15);
 		position: absolute;
 		content: "";
+	}
+	.nav_links {
+		display: flex;
+		flex-direction: column;
+		margin-top: 40px;
+		gap: 25px;
+		font-family: $text-police;
+		.nav_element {
+			margin-left: 20%;
+			cursor: pointer;
+			font-size: 17px;
+			position: relative;
+			text-decoration: none;
+			color: $secondary-color;
+		}
+		.nav_element::before {
+			position: absolute;
+			content: "";
+			// background: $main-color;
+			border-radius: 50%;
+			left: -10%;
+			top: calc(50% - 3px);
+			width: 8px;
+			height: 8px;
+			transform: scale(0.05);
+			transition: 0.15s linear;
+		}
+		.nav_element:hover::before {
+			outline: 2px solid $main-color;
+			transform: scale(1);
+			transition: 0.15s linear;
+		}
+	}
+	.account {
+		font-family: $text-police;
+		position: absolute;
+		bottom: 15px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		gap: 3%;
+		* {
+			text-decoration: none;
+			color: $secondary-color;
+		}
+		.logo {
+			width: 8%;
+			filter: saturate(0);
+			transition: 0.5s ease;
+			cursor: pointer;
+			margin-top: 1px;
+		}
+		.logo:hover {
+			filter: saturate(1);
+			transition: 0.5s ease;
+		}
+		a {
+			cursor: pointer;
+			position: relative;
+		}
+		a::after {
+			width: 100%;
+			height: 0px;
+			background: $main-color;
+			position: absolute;
+			content: "";
+			bottom: 0;
+			left: 0;
+		}
+		a:hover::after {
+			height: 2px;
+		}
 	}
 }

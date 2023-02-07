@@ -1,1 +1,99 @@
 @import "../../../styles/variables.scss";
+
+.my_course_tab {
+	height: 100vh;
+	width: 100%;
+	color: $secondary-color;
+	display: flex;
+	// align-items: center;
+	flex-direction: column;
+	overflow-y: scroll;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	.tab_title {
+		padding: 12px 30px;
+		color: $secondary-color;
+		width: 100%;
+		// background: blue;
+		// position: relative;
+		position: fixed;
+		// background: white;
+	}
+	.tab_title:after {
+		width: 85%;
+		left: 2%;
+		position: absolute;
+		content: "";
+		height: 2px;
+		top: 100%;
+		background: linear-gradient(90deg, $main-color, white);
+	}
+	.tab_title_background {
+		background: rgba(255, 255, 255, 0.3);
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: -1;
+		backdrop-filter: blur(10px);
+	}
+	.container {
+		width: 100%;
+		margin-top: 70px;
+		display: flex;
+		gap: 25px;
+		flex-direction: column;
+		align-items: center;
+		.profile {
+			padding-left: 10px;
+			margin-top: 25px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			// align-items: center;
+			min-width: 30%;
+			width: max-content;
+			gap: 15px;
+			border: 1px solid $secondary-color;
+			padding: 25px;
+			border-radius: 5px;
+			font-family: $text-police;
+			// box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+			.profile_pic {
+				border: 2px solid $main-color;
+				border-radius: 50%;
+				overflow: hidden;
+				height: 180px;
+			}
+			.profile_info {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				p::before {
+					content: "▹";
+					color: $main-color;
+				}
+				h2 {
+					margin-bottom: 5px;
+				}
+			}
+		}
+		.formation_list {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			.formation_list_title {
+				align-self: center;
+				margin-bottom: 10px;
+			}
+			.formation_list_container {
+				border: 1px solid green;
+				height: 450px;
+			}
+		}
+	}
+}
+.my_course_tab::-webkit-scrollbar {
+	display: none;
+}

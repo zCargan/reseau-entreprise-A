@@ -1,8 +1,10 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 
-import SideBar from "../../components/SideBar/SideBar";
+import "./UserAppLayout.scss";
+import SideBar from "@/components/SideBar/SideBar";
 
+<<<<<<< HEAD
 function UserAppLayout(){
     return(
         <>
@@ -12,6 +14,17 @@ function UserAppLayout(){
             </Suspense>
         </>
     )
+=======
+function UserAppLayout() {
+	return (
+		<div className="user_app">
+			<SideBar />
+			<Suspense>
+				<Outlet />
+			</Suspense>
+		</div>
+	);
+>>>>>>> 3f717b0 ([ADD] feat(courses): Adding side bar + courses page)
 }
 
 export default UserAppLayout;
