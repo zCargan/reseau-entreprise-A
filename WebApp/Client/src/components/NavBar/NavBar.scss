@@ -7,6 +7,7 @@
     background-color: $main-background;
     position: fixed;
     width: 100%;
+    z-index: 2;
 
     .navbar-logo {
         a {

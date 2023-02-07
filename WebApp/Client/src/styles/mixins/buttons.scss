@@ -1,0 +1,19 @@
+@import "../variables.scss";
+
+@mixin classic-button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border: 2px solid $main-color;
+    font-family: $text-police;
+    background-color: none;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $main-color;
+        color: white;
+        transition-duration: 0.8s;
+    }
+}

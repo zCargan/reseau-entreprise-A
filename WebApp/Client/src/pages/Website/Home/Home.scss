@@ -1,1 +1,102 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins/buttons.scss";
+
+.home-main-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .home-wave-div {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $main-background;
+
+        .absolute-home-div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: none;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            gap: calc(10% + 30px);
+            padding: 100px 75px;
+
+            .text-description {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h1 {
+                    font-size: 42px;
+                    font-family: $title-police;
+                    padding-bottom: 10px;
+
+                    span {
+                        color: $main-color;
+                    }
+                }
+
+                h3 {
+                    font-size: 30px;
+                    font-family: $title-police;
+                    padding-right: 100px;
+                }
+
+                div {
+                    button {
+                        @include classic-button;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .svg-icon-div {
+                #learn-icon {
+                    height: 400px;
+                    width: 400px;
+                }
+            }
+        }
+    }
+
+    .about-section {
+        height: auto;
+        width: 100%;
+        background-color: white;
+        padding: 50px 150px;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .about-us-title {
+            h1 {
+                font-size: 32px;
+                font-family: $title-police;
+            }
+        }
+
+        .about-us-description {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p {
+                font-size: 22px;
+                font-family: $text-police;
+                padding: 0 150px;
+            }
+        }
+
+        button {
+            @include classic-button;
+        }
+    }
+}
