@@ -14,6 +14,12 @@ module.exports = (sequelize, DataTypes) => {
         as: "idUser"
       })
 
+      this.belongsToMany(models.User, {
+        through: models.FormationUser,
+        foreignKey: "idFormation",
+        as: "idFormation"
+      })
+
       this.belongsTo(models.Theme, {
         foreignKey: "id",
         as: "idTheme"

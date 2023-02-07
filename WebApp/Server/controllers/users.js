@@ -28,6 +28,31 @@ module.exports = {
   async post(req, res) {
     try {
       const { username, rule, firstName, lastName, email, password } = req.body
+
+      // check if the username already exists
+      const usernameExists = await User.findOne({
+        where: {
+          username: username
+        }
+      })
+      if (usernameExists) {
+        return res.status(403).send({
+          error: "The username already exists"
+        })
+      }
+
+      // check if the email already exists
+      const emailExists = await User.findOne({
+        where: {
+          email: email
+        }
+      })
+      if (emailExists) {
+        return res.status(403).send({
+          error: "The email already exists"
+        })
+      }
+
       const user = await User.create({
         username,
         rule,
