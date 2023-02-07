@@ -1,1 +1,34 @@
 @import "../../styles/variables.scss";
+
+.side_bar {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	outline: 1px solid black;
+	width: max-content;
+	// padding: 15px 25px;
+	.logo_title {
+		display: flex;
+		// gap: 5%;
+		width: max-content;
+		padding: 25px;
+		position: relative;
+		.logo {
+			min-width: 25px;
+		}
+		.logo_text {
+			margin-left: 10px;
+			width: max-content;
+			font-size: 25px;
+		}
+	}
+	.logo_title::after {
+		height: 1px;
+		width: 80%;
+		left: 10%;
+		top: 100%;
+		background: black;
+		position: absolute;
+		content: "";
+	}
+}
