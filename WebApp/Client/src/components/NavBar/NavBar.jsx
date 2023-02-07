@@ -17,7 +17,7 @@ function NavBar() {
 			</div>
 			<div className="navbar-links">
 				<div className="nav-links-items">
-					<Link to="/website/domaines">domaines</Link>
+					<Link to="/website/domain">domaines</Link>
 				</div>
 				<div className="navbar-lang">
 					<LangIcon id="nav-lang-icon" />
