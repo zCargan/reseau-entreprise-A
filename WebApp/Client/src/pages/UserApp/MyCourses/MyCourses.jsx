@@ -1,5 +1,5 @@
 import "./MyCourses.scss";
-import ProfilePic from "@/assets/images/popo.png";
+import ProfilePic from "@/assets/image/popo.png";
 import { useState } from "react";
 
 function MyCourses() {

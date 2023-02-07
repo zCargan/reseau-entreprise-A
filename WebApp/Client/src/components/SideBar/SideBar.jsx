@@ -1,6 +1,6 @@
 import "./SideBar.scss";
-import Logo from "@/assets/logo/logo.svg";
-import Logout from "@/assets/logo/logout.svg";
+import Logo from "@/assets/icons/logo.svg";
+import Logout from "@/assets/icons/logout.svg";
 import { Link } from "react-router-dom";
 
 function SideBar() {
