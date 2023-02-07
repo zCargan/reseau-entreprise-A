@@ -12,7 +12,7 @@ function NavBar(){
         <div className="navbar-main-div">
             <div className="navbar-logo">
                 <Link to="/website">
-                    <h1>Academix</h1>
+                    <h1>Academox</h1>
                 </Link>
             </div>
             <div className="navbar-links">
