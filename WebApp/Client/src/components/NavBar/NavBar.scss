@@ -7,6 +7,7 @@
     background-color: $main-background;
     position: fixed;
     width: 100%;
+    z-index: 2;
 
     .navbar-logo {
         a {
@@ -25,6 +26,17 @@
         gap: 20px;
         padding-top: 13px;
         font-family: $title-police;
+
+        .nav-links-items {
+            a {
+                text-decoration: none;
+                color: rgb(100, 100, 100);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
 
         .navbar-lang {
             display: flex;

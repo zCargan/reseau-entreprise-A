@@ -16,6 +16,9 @@ function NavBar(){
                 </Link>
             </div>
             <div className="navbar-links">
+                <div className="nav-links-items">
+                    <Link to="/website/domaines">domaines</Link>
+                </div>
                 <div className="navbar-lang">
                     <LangIcon id="nav-lang-icon" />
                     <DownArrow id="nav-arrow-icon"/>
