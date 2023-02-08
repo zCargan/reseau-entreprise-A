@@ -8,7 +8,7 @@ function Search() {
 
 	return (
 		<>
-			<NavBar />
+			{/* <NavBar /> */}
 			<div className="search__container">
 				<div className="search__content">
 					<div className="search__theme">

@@ -4,11 +4,11 @@
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	border: 1px solid rgba(0, 0, 0, 0.15);
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	width: max-content;
 	position: relative;
 	color: $secondary-color;
-	background-color: $main-background;
+	// background-color: $main-background;
 
 	.logo_title {
 		display: flex;
@@ -38,7 +38,7 @@
 		width: 90%;
 		left: 5%;
 		top: 100%;
-		background: rgba(0, 0, 0, 0.15);
+		background: rgba(0, 0, 0, 0.2);
 		position: absolute;
 		content: "";
 	}
@@ -59,13 +59,13 @@
 		.nav_element::before {
 			position: absolute;
 			content: "";
-			// background: $main-color;
+			outline: 2px solid $secondary-color;
 			border-radius: 50%;
 			left: -10%;
-			top: calc(50% - 3px);
+			top: calc(50% - 4px);
 			width: 8px;
 			height: 8px;
-			transform: scale(0.05);
+			transform: scale(1);
 			transition: 0.15s linear;
 		}
 		.nav_element:hover::before {

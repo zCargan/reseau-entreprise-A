@@ -15,12 +15,15 @@ function SideBar() {
 			<div className="nav_links">
 				<Link to="/" className="nav_element">
 					My courses
-				</Link>
+				</Link>{" "}
 				<Link to="/" className="nav_element">
 					Trainers
 				</Link>
 				<Link to="/" className="nav_element">
 					Search
+				</Link>
+				<Link to="/create-course" className="nav_element">
+					Create course
 				</Link>
 			</div>
 			<div className="account">
