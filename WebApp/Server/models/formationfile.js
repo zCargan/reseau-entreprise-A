@@ -9,20 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Formation, {
-        foreignKey: "id",
-        as: "idFormation"
-      })
+      FormationFile.belongsTo(models.Formation)
     }
   }
   FormationFile.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-      },
-      // idFormation: DataTypes.INTEGER,
       filename: DataTypes.STRING
     },
     {

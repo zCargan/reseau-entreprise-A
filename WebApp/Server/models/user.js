@@ -9,21 +9,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.belongsToMany(models.Formation, {
+        through: "UserFormation",
+        foreignKey: "userId",
+        otherKey: "formationId"
+      })
     }
   }
   User.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
       },
-      username: DataTypes.STRING,
       rule: DataTypes.STRING,
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password: DataTypes.STRING
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+      },
+      password: DataTypes.STRING,
+      avatar: DataTypes.STRING
     },
     {
       sequelize,

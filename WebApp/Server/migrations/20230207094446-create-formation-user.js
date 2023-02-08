@@ -1,8 +1,8 @@
-'use strict';
+"use strict"
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('FormationUsers', {
+    await queryInterface.createTable("FormationUsers", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,10 +10,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idUser: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       idFormation: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Formations",
+          key: "id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       createdAt: {
         allowNull: false,
@@ -23,9 +35,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('FormationUsers');
+    await queryInterface.dropTable("FormationUsers")
   }
-};
+}

@@ -9,11 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idUser: {
-        type: Sequelize.INTEGER
-      },
-      idTheme: {
-        type: Sequelize.INTEGER
+      ThemeId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Themes",
+          key: "id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       description: {
         type: Sequelize.STRING

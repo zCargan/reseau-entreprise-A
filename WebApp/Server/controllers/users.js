@@ -27,7 +27,8 @@ module.exports = {
 
   async post(req, res) {
     try {
-      const { username, rule, firstName, lastName, email, password } = req.body
+      const { username, rule, firstName, lastName, email, password, avatar } =
+        req.body
 
       // check if the username already exists
       const usernameExists = await User.findOne({
@@ -59,7 +60,8 @@ module.exports = {
         firstName,
         lastName,
         email,
-        password
+        password,
+        avatar
       })
       res.send(user)
     } catch (err) {

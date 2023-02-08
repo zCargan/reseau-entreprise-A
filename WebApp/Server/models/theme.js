@@ -9,16 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Theme.hasMany(models.Formation)
     }
   }
   Theme.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-      },
-      tag: DataTypes.STRING
+      libelle: DataTypes.STRING
     },
     {
       sequelize,

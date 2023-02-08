@@ -9,32 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.User, {
-        foreignKey: "id",
-        as: "idUser"
+      Formation.belongsToMany(models.User, {
+        through: "UserFormation",
+        foreignKey: "formationId",
+        otherKey: "userId"
       })
 
-      this.belongsToMany(models.User, {
-        through: models.FormationUser,
-        foreignKey: "idFormation",
-        as: "idFormation"
-      })
-
-      this.belongsTo(models.Theme, {
-        foreignKey: "id",
-        as: "idTheme"
-      })
+      Formation.hasMany(models.FormationFile)
+      Formation.belongsTo(models.Theme)
     }
   }
   Formation.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-      },
-      // idUser: DataTypes.INTEGER,
-      // idTheme: DataTypes.INTEGER,
       description: DataTypes.STRING,
       price: DataTypes.FLOAT
     },
