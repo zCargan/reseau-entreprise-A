@@ -7,39 +7,116 @@
 	gap: 25px;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 25px;
 	.fields_container {
 		display: flex;
+		gap: 10%;
 		flex-direction: row;
-		min-width: 50%;
-		border: 1px solid red;
-		form {
+		justify-content: center;
+		width: 100%;
+		// border: 1px solid red;
+		padding: 15px;
+		div {
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
+			width: 40%;
 		}
-		input,
-		select,
+		:nth-child(1) {
+			width: 35%;
+		}
+		:nth-child(2) {
+			width: 40%;
+		}
 		textarea {
-			border: 1px solid $secondary-color;
+			min-height: 25vh;
+			resize: none;
+		}
+		select,
+		input {
+			min-width: 50%;
+		}
+		.input_style {
+			border: 2px solid rgba(0, 0, 0, 0.4);
+			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 			border-radius: 2px;
 			padding: 5px;
 			font-family: $text-police;
+			transition: 0.2s ease;
 		}
-		input:hover,
-		select:hover,
-		textarea:hover {
-			border: 1px solid $main-color;
+		.input_style:hover {
+			border: 2px solid $main-color;
+			transform: translateY(-1px);
+			transition: 0.2s ease;
 		}
-		input:active,
-		select:active,
-		textarea:active {
+		.input_style:active {
 			outline: none;
 		}
-		input:focus,
-		select:focus,
-		textarea:focus {
-			order: 1px solid $main-color;
+		.input_style:focus {
+			order: 2px solid $main-color;
 			outline: none;
+		}
+		.validation_button {
+			border: 2px solid $main-color;
+			border-radius: 3px;
+			background: none;
+			font-family: $text-police;
+			padding: 10px 20px;
+			cursor: pointer;
+			font-size: 15px;
+			width: max-content;
+			align-self: center;
+			transition: 0.2s ease;
+		}
+		.validation_button:hover {
+			background: rgba(40, 127, 232, 0.2);
+			transform: translateY(-2px);
+			transition: 0.2s ease;
+		}
+		.file_drop_zone {
+			min-height: 25vh;
+			width: 100%;
+			// outline: 1px solid green;
+			border: 2px dashed $main-color;
+			border-radius: 3px;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			input {
+				opacity: 0;
+				height: 100%;
+				width: 100%;
+				cursor: pointer;
+				position: absolute;
+			}
+			p {
+				font-size: 17px;
+				margin: 0 15px;
+				text-align: center;
+			}
+		}
+		.file_drop_zone:hover {
+			background: rgba(40, 127, 232, 0.2);
+		}
+		.file_list {
+			width: 100%;
+			border: 1px solid green;
+			display: flex;
+			gap: 10px;
+			div {
+				width: 100%;
+			}
+			.file_list_element {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				p {
+					white-space: nowrap;
+					width: 100%;
+					border: 1px solid red;
+				}
+			}
 		}
 	}
 }

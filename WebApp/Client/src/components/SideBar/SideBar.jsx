@@ -19,7 +19,7 @@ function SideBar() {
 				<Link to="/trainers" className="nav_element">
 					Trainers
 				</Link>
-				<Link to="/" className="nav_element">
+				<Link to="/search" className="nav_element">
 					Search
 				</Link>
 				<Link to="/create-course" className="nav_element">
