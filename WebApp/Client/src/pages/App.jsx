@@ -21,6 +21,7 @@ const MyCourses = lazy(() => import("../pages/UserApp/MyCourses/MyCourses"));
 const CreateCourse = lazy(() =>
 	import("@/pages/UserApp/CreateCourse/CreateCourse")
 );
+const Trainers = lazy(() => import("../pages/UserApp/Trainers/Trainers"));
 
 function App() {
 	return (
@@ -35,6 +36,7 @@ function App() {
 					<Route index element={<MyCourses />} />
 					<Route path="search" element={<Search />} />
 					<Route path="create-course" element={<CreateCourse />} />
+					<Route path="trainers" element={<Trainers />} />
 				</Route>
 				<Route path="*" element={<NoPages />} />
 			</Routes>

@@ -16,7 +16,7 @@ function SideBar() {
 				<Link to="/" className="nav_element">
 					My courses
 				</Link>{" "}
-				<Link to="/" className="nav_element">
+				<Link to="/trainers" className="nav_element">
 					Trainers
 				</Link>
 				<Link to="/" className="nav_element">
