@@ -1,5 +1,4 @@
 import "./Trainers.scss";
-import Profile from "@/assets/image/tutu.webp";
 import TrainersProfile from "./TrainersProfile";
 
 function Trainers() {
