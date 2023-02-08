@@ -44,7 +44,6 @@ module.exports = {
           error: "The user does not exist"
         })
       }
-      console.log("idUserExists ---->", idUserExists)
 
       // check if the theme already exists
       const themeIdExists = await Theme.findByPk(idTheme)
@@ -53,7 +52,6 @@ module.exports = {
           error: "The theme does not exist"
         })
       }
-      console.log("themeIdExists ---->", themeIdExists)
 
       const formation = await Formation.create({
         idUser: parseInt(idUser),

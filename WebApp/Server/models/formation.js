@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   Formation.init(
     {
       description: DataTypes.STRING,
-      price: DataTypes.FLOAT
+      price: DataTypes.INTEGER
     },
     {
       sequelize,
