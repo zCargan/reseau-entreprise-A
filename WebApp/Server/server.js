@@ -12,6 +12,9 @@ app.use(express.json())
 
 app.use(cors({ origin: "http://127.0.0.1:3000", credentials: true }))
 
+// display files from uploads folder
+app.use("/uploads", express.static("uploads"))
+
 //utiliser le router nodejs
 app.use("/users", usersRoute)
 app.use("/formations", formationsRoute)
