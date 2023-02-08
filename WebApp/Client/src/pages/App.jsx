@@ -18,6 +18,9 @@ const Domain = lazy(() => import("../pages/Website/Domain/Domain"));
 //--------------------------USER APP PAGES-----------------
 const Search = lazy(() => import("../pages/UserApp/Search/Search"));
 const MyCourses = lazy(() => import("../pages/UserApp/MyCourses/MyCourses"));
+const CreateFormation = lazy(() =>
+	import("../pages/UserApp/CreateCourse/CreateFormation")
+);
 
 function App() {
 	return (
@@ -31,8 +34,12 @@ function App() {
 				<Route path="/" element={<UserAppLayout />}>
 					<Route index element={<MyCourses />} />
 					<Route path="search" element={<Search />} />
+					<Route
+						path="create-formation"
+						element={<CreateFormation />}
+					/>
 				</Route>
-                <Route path="*" element={<NoPages />} />
+				<Route path="*" element={<NoPages />} />
 			</Routes>
 		</>
 	);

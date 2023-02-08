@@ -22,6 +22,7 @@ function Search() {
 							<input type="text" />
 						</div>
 					</div>
+					{/* Mettre un bouton pour confirmer la recherche */}
 					<div className="search__formation">
 						{/*TODO Faire une boucle avec tous les formations récupérés en backend qu'il souhaite rechercher */}
 					</div>

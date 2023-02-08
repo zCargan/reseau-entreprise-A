@@ -38,9 +38,11 @@ function Login() {
 		<div className="login__container">
 			<div className="login__content">
 				<div className="login__header">
-					<Link to="/website/domain">
-						<img src={ArrowLeft} alt="arrow_left" />
-					</Link>
+					<div className="login__return">
+						<Link to="/website/domain">
+							<img src={ArrowLeft} alt="arrow_left" />
+						</Link>
+					</div>
 					<div className="login__title">
 						<img src={Logo} alt="" />
 						<h1>Academox</h1>

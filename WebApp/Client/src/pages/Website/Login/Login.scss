@@ -20,11 +20,14 @@
 		background-color: #f5f5f5;
 		display: flex;
 		flex-direction: column;
-		height: 80%;
+		height: 90%;
 		margin: auto;
 		width: 500px;
+		padding: 15px;
 		@media (min-width: 768px) {
 			& {
+				// height: 650px;
+				// height: 100%;
 				width: 650px;
 			}
 		}
@@ -32,6 +35,7 @@
 		border-radius: 5px;
 		.login__header {
 			// border: solid red 1px;
+			position: relative;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -39,8 +43,12 @@
 			padding: 5px;
 			@media (max-height: 668px) {
 				& {
-					height: auto;
+					height: 100%;
 				}
+			}
+			.login__return {
+				position: absolute;
+				top: 2px;
 			}
 			.login__form {
 				/* border: solid red 1px; */
@@ -155,7 +163,7 @@
 			.login__title {
 				// border: solid red 1px;
 				width: 100%;
-				font-size: 30px;
+				font-size: 18px;
 				// text-align: center;
 				font-family: $text-police;
 				font-weight: bold;
@@ -164,12 +172,17 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				margin-top: 10px;
-				margin-bottom: 20px;
+				margin-bottom: 5px;
+				margin-top: 5px;
 				img {
-					width: 8%;
+					width: 4%;
 					// border: solid red 1px;
 					margin-right: 20px;
+					@media (max-width: 645px) {
+						& {
+							width: 20px;
+						}
+					}
 				}
 			}
 		}
