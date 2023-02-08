@@ -1,99 +1,82 @@
 @import "../../../styles/variables.scss";
 
-.my_course_tab {
-	height: 100vh;
+.container {
 	width: 100%;
-	color: $secondary-color;
+	margin-top: 70px;
 	display: flex;
-	// align-items: center;
+	gap: 25px;
 	flex-direction: column;
-	overflow-y: scroll;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	.tab_title {
-		padding: 12px 30px;
-		color: $secondary-color;
-		width: 100%;
-		// background: blue;
-		// position: relative;
-		position: fixed;
-		// background: white;
-	}
-	.tab_title:after {
-		width: 85%;
-		left: 2%;
-		position: absolute;
-		content: "";
-		height: 2px;
-		top: 100%;
-		background: linear-gradient(90deg, $main-color, white);
-	}
-	.tab_title_background {
-		background: rgba(255, 255, 255, 0.3);
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		position: absolute;
-		z-index: -1;
-		backdrop-filter: blur(10px);
-	}
-	.container {
-		width: 100%;
-		margin-top: 70px;
-		display: flex;
-		gap: 25px;
-		flex-direction: column;
-		align-items: center;
-		.profile {
-			padding-left: 10px;
-			margin-top: 25px;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			// align-items: center;
-			min-width: 30%;
-			width: max-content;
-			gap: 15px;
-			border: 1px solid $secondary-color;
-			padding: 25px;
-			border-radius: 5px;
-			font-family: $text-police;
-			// box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-			.profile_pic {
-				border: 2px solid $main-color;
-				border-radius: 50%;
-				overflow: hidden;
-				height: 180px;
+	align-items: center;
+	.profile {
+		@keyframes appearRotate {
+			0% {
+				transform: rotateY(90deg);
+				opacity: 0;
 			}
-			.profile_info {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-				p::before {
-					content: "▹";
-					color: $main-color;
-				}
-				h2 {
-					margin-bottom: 5px;
-				}
+			100% {
+				opacity: 1;
+				transform: rotateY(0);
 			}
 		}
-		.formation_list {
+		padding-left: 10px;
+		margin-top: 25px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		// align-items: center;
+		min-width: 30%;
+		width: max-content;
+		gap: 15px;
+		border: 1px solid $secondary-color;
+		padding: 25px;
+		border-radius: 5px;
+		font-family: $text-police;
+		background: linear-gradient(
+			45deg,
+			rgb(235, 235, 235),
+			rgb(255, 255, 255),
+			rgb(235, 235, 235)
+		);
+		transform: rotateY(-90deg);
+		z-index: -1;
+		opacity: 0;
+		animation: appearRotate 1s ease forwards;
+		// box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+		.profile_pic {
+			border: 2px solid $main-color;
+			border-radius: 50%;
+			overflow: hidden;
+			height: 180px;
+		}
+		.profile_info {
 			display: flex;
 			flex-direction: column;
-			width: 100%;
-			.formation_list_title {
-				align-self: center;
-				margin-bottom: 10px;
+			gap: 10px;
+			p::before {
+				content: "▹";
+				color: $main-color;
 			}
-			.formation_list_container {
-				border: 1px solid green;
-				height: 450px;
+			h2 {
+				margin-bottom: 5px;
 			}
 		}
 	}
-}
-.my_course_tab::-webkit-scrollbar {
-	display: none;
+	.formation_list {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		.formation_list_title {
+			align-self: center;
+			margin-bottom: 15px;
+		}
+		.formation_list_container {
+			// border: 1px solid green;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 25px;
+			counter-increment: test;
+		}
+	}
 }
