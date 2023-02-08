@@ -17,6 +17,7 @@
 	overflow-y: scroll;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+	font-family: $title-police;
 	.tab_title {
 		padding: 12px 30px;
 		color: $secondary-color;
