@@ -13,21 +13,21 @@ function SideBar() {
 				</Link>
 			</div>
 			<div className="nav_links">
-				<Link to="/" className="nav_element">
+				<Link to="/dashboard" className="nav_element">
 					My courses
 				</Link>{" "}
-				<Link to="/trainers" className="nav_element">
+				<Link to="/dashboard/trainers" className="nav_element">
 					Trainers
 				</Link>
-				<Link to="/search" className="nav_element">
+				<Link to="/dashboard/search" className="nav_element">
 					Search
 				</Link>
-				<Link to="/create-course" className="nav_element">
+				<Link to="/dashboard/create-course" className="nav_element">
 					Create course
 				</Link>
 			</div>
 			<div className="account">
-				<Link to="/">Aymar</Link>
+				<Link to="/dashboard">Aymar</Link>
 				<img
 					src={Logout}
 					className="logo"

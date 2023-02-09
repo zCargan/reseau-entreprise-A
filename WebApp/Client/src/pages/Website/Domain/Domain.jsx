@@ -1,7 +1,10 @@
 import "./Domain.scss";
 import NavBar from "@/components/NavBar/NavBar";
 import Formation from "@/components/Formation/formation";
+import { connect } from "react-redux";
 import { ReactComponent as ListIcon } from "@/assets/icons/list-icon.svg";
+import { getDataFormation } from "../../../action/formationAction";
+import { useEffect } from "react";
 function Domain() {
 	// Contenue de l'affichage d'une formation
 
@@ -55,4 +58,17 @@ function Domain() {
 	);
 }
 
-export default Domain;
+const mapStateToProps = (state) => {
+	return {
+		formations: state.formationState.formations,
+	};
+};
+
+const mapStateToDispatch = (dispatch) => {
+	return {
+		getFormations: () => dispatch(getDataFormation()),
+	};
+};
+
+const connector = connect(mapStateToProps , mapStateToDispatch);
+export default connector(Domain);
