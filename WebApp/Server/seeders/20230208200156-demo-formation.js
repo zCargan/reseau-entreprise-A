@@ -13,7 +13,7 @@ module.exports = {
      * }], {});
      */
 
-    await queryInterface.bulkInsert("Formations", [
+    await queryInterface.bulkInsert("formations", [
       {
         ThemeId: 1,
         description: "Formation en développement web",
@@ -81,6 +81,6 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      */
 
-    await queryInterface.bulkDelete("Formations", null, {})
+    await queryInterface.bulkDelete("formations", null, {})
   }
 }

@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Formation"
+      modelName: "formation"
     }
   )
   return Formation

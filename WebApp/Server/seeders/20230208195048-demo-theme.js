@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    await queryInterface.bulkInsert("Themes", [
+    await queryInterface.bulkInsert("themes", [
       {
         libelle: "Développement Web",
         createdAt: new Date(),
@@ -64,6 +64,6 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      */
 
-    await queryInterface.bulkDelete("Themes", null, {})
+    await queryInterface.bulkDelete("themes", null, {})
   }
 }
