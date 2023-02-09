@@ -114,37 +114,37 @@ function CreateCourse() {
 					</div>
 					<div>
 						<div className="file_drop_zone">
-							<input
-								type="file"
-								onChange={handleFile}
-								unique="true"
-							/>
+							<input type="file" onChange={handleFile} />
 							<p>Select a file to add</p>
 						</div>
 						<div className="file_list">
 							<h3>Fichier ajoutés:</h3>
 							<div>
-								{droppedFiles.map((file) => {
-									return (
-										<div
-											className="file_list_element"
-											key={droppedFiles.indexOf(file)}
-										>
-											<p>{file.name}</p>
-											<div
-												className="delete_container"
-												onClick={() => {
-													deleteFile(file);
-												}}
-											>
-												<img
-													src={Delete}
-													alt="cross to delete the imported file"
-												/>
-											</div>
-										</div>
-									);
-								})}
+								{droppedFiles.length
+									? droppedFiles.map((file) => {
+											return (
+												<div
+													className="file_list_element"
+													key={droppedFiles.indexOf(
+														file
+													)}
+												>
+													<p>{file.name}</p>
+													<div
+														className="delete_container"
+														onClick={() => {
+															deleteFile(file);
+														}}
+													>
+														<img
+															src={Delete}
+															alt="cross to delete the imported file"
+														/>
+													</div>
+												</div>
+											);
+									  })
+									: "Please add files..."}
 							</div>
 						</div>
 					</div>
