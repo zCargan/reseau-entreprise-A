@@ -39,7 +39,7 @@ function Login() {
 			<div className="login__content">
 				<div className="login__header">
 					<div className="login__return">
-						<Link to="/website/domain">
+						<Link to="/domain">
 							<img src={ArrowLeft} alt="arrow_left" />
 						</Link>
 					</div>

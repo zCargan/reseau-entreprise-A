@@ -11,13 +11,13 @@ function NavBar() {
 	return (
 		<div className="navbar-main-div">
 			<div className="navbar-logo">
-				<Link to="/website">
+				<Link to="/">
 					<h1>Academox</h1>
 				</Link>
 			</div>
 			<div className="navbar-links">
 				<div className="nav-links-items">
-					<Link to="/website/domain">domaines</Link>
+					<Link to="/domain">domaines</Link>
 				</div>
 				<div className="navbar-lang">
 					<LangIcon id="nav-lang-icon" />
@@ -30,7 +30,7 @@ function NavBar() {
 				</div>
 				<div className="vertical-line"></div>
 				<div className="nav-login-link">
-					<Link to="/website/login">Login</Link>
+					<Link to="/login">Login</Link>
 				</div>
 			</div>
 		</div>

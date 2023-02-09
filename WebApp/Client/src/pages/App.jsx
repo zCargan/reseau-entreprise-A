@@ -19,7 +19,7 @@ const Domain = lazy(() => import("../pages/Website/Domain/Domain"));
 const Search = lazy(() => import("../pages/UserApp/Search/Search"));
 const MyCourses = lazy(() => import("../pages/UserApp/MyCourses/MyCourses"));
 const CreateCourse = lazy(() =>
-	import("@/pages/UserApp/CreateCourse/CreateCourse")
+	import("../pages/UserApp/CreateCourse/CreateCourse")
 );
 const Trainers = lazy(() => import("../pages/UserApp/Trainers/Trainers"));
 
@@ -27,12 +27,13 @@ function App() {
 	return (
 		<>
 			<Routes>
-				<Route path="/website" element={<WebsiteLayout />}>
+				<Route path="/" element={<WebsiteLayout />}>
 					<Route index element={<Home />} />
 					<Route path="login" element={<Login />} />
 					<Route path="domain" element={<Domain />} />
+					<Route path="search" element={<Search />} />
 				</Route>
-				<Route path="/" element={<UserAppLayout />}>
+				<Route path="/dashboard" element={<UserAppLayout />}>
 					<Route index element={<MyCourses />} />
 					<Route path="search" element={<Search />} />
 					<Route path="create-course" element={<CreateCourse />} />
