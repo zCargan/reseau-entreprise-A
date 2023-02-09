@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import "./UserAppLayout.scss";
 import SideBar from "@/components/SideBar/SideBar";
 
-function UserAppLayout() {
+function UserAppLayout(props) {
 	return (
 		<div className="user_app">
 			<SideBar />

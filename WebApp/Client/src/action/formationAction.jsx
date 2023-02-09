@@ -7,6 +7,7 @@ const DOMAIN_NAME = `http://localhost:5000`;
 export const addDataFormation = createAction(
 	ADD_FORMATION,
 	function prepare(formations) {
+		console.log("In there");
 		return { payload: formations };
 	}
 );

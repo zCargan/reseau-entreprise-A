@@ -9,6 +9,8 @@ const formationReducer = createSlice({
 	extraReducers: (builder) => {
 		builder
 			.addCase(addDataFormation, (state, action) => {
+				console.log("In reducer");
+				console.log(action.payload);
 				state.formations = action.payload;
 			})
 			.addDefaultCase((state, action) => {
