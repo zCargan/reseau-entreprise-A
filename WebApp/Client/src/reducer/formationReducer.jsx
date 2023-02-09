@@ -3,10 +3,10 @@ import { addDataFormation } from "../action/formationAction";
 const initialState = { formations: [], filterFormations: [] };
 
 const formationReducer = createSlice({
-	name: "formation",
+	name: "formations",
 	initialState: initialState,
-	reducer: {},
-	extrareducers: (builder) => {
+	reducers: {},
+	extraReducers: (builder) => {
 		builder
 			.addCase(addDataFormation, (state, action) => {
 				state.formations = action.payload;
