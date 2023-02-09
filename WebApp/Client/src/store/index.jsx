@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import localStorage from "localStorage";
 import rootReducer from "../reducer";
-import logger from "redux-logger";
 
 import {
 	persistStore,
