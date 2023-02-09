@@ -1,41 +1,35 @@
 import { configureStore } from "@reduxjs/toolkit";
-import {
-	persistReducer,
-	persistStore,
-	FLUSH,
-	REHYDRATE,
-	PAUSE,
-	PERSIST,
-	PURGE,
-	REGISTER,
-} from "redux/persist";
-import localSorage from "localStorage";
-import rootReducer from "./reducer";
+// import localStorage from "localStorage";
+import rootReducer from "../reducer";
 
-const persitConfig = {
-	key: "root",
-	version: 1,
-	storage: localStorage,
-	blacklist: [],
-};
+const store = configureStore({ reducer: rootReducer });
 
-const persistedReducer = persistReducer(persitConfig, rootReducer);
+export default store;
 
-export const store = configureStore({
-	reducer: persistedReducer,
-	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware({
-			serializableCheck: {
-				ignoreActions: [
-					FLUSH,
-					REHYDRATE,
-					PAUSE,
-					PERSIST,
-					PURGE,
-					REGISTER,
-				],
-			},
-		}),
-});
+// const persitConfig = {
+// 	key: "root",
+// 	version: 1,
+// 	storage: localStorage,
+// 	blacklist: [],
+// };
 
-export const persistor = persistStore(store);
+// const persistedReducer = persistReducer(persitConfig, rootReducer);
+
+// export const store = configureStore({
+// 	reducer: persistedReducer,
+// 	middleware: (getDefaultMiddleware) =>
+// 		getDefaultMiddleware({
+// 			serializableCheck: {
+// 				ignoreActions: [
+// 					FLUSH,
+// 					REHYDRATE,
+// 					PAUSE,
+// 					PERSIST,
+// 					PURGE,
+// 					REGISTER,
+// 				],
+// 			},
+// 		}),
+// });
+
+// export const persistor = persistStore(store);

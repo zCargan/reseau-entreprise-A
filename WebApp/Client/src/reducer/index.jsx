@@ -1,10 +1,8 @@
 import { combineReducers } from "redux";
-import formationReducer from "./annonceReducer";
-import userReducer from "./userReducer";
+import formationReducer from "./formationReducer";
 
 const rootReducer = combineReducers({
-    formationState: formationReducer,
-	userState: userReducer,
+	formationState: formationReducer,
 });
 
 export default rootReducer;

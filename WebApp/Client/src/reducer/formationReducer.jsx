@@ -1,19 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = {
-	theme: "",
-	title: "",
-	author: "",
-	price: "",
-	image: "",
-	price: 0,
-};
+import { addDataFormation } from "../action/formationAction";
+const initialState = { formations: [], filterFormations: [] };
 
 const formationReducer = createSlice({
-    name : 'formation',
-    initialState : initialState,
-    reducer : {},
-    extrareducers: (builder)=>{
-        builder.addCase(addFormationData, (state, action)=>{})
-    }
-})
+	name: "formation",
+	initialState: initialState,
+	reducer: {},
+	extrareducers: (builder) => {
+		builder
+			.addCase(addDataFormation, (state, action) => {
+				state.formations = action.payload;
+			})
+			.addDefaultCase((state, action) => {
+				return state;
+			});
+	},
+});
+
+export default formationReducer.reducer;
