@@ -1,4 +1,5 @@
 import "./CreateCourse.scss";
+import Delete from "@/assets/icons/delete.svg";
 import { useState, useRef } from "react";
 
 function CreateCourse() {
@@ -27,9 +28,18 @@ function CreateCourse() {
 	// TODO AJOUTER LES FICHIERS QUI SONT DROP DANS CETTE LISTE
 	const [droppedFiles, setDroppedFiles] = useState([]);
 
+	const deleteFile = (file) => {
+		let newArray = droppedFiles.filter((x) => x != file);
+		setDroppedFiles(newArray);
+	};
+
 	const handleSubmit = (e) => {
 		console.log("SUBMITTED");
-		console.log(courseTitle.current.value);
+		console.log(
+			courseTitle.current.value,
+			courseDesc.current.value,
+			courseTheme.current.value
+		);
 		e.preventDefault();
 	};
 
@@ -37,7 +47,10 @@ function CreateCourse() {
 		console.log(e.target.value);
 		if (e.target.files[0].size < 100 * 1048576) {
 			if (e.target.files[0]) {
-				console.log(imageUrl.current, image.current);
+				console.log(
+					URL.createObjectURL(e.target.files[0]),
+					e.target.files[0]
+				);
 				setDroppedFiles((oldList) => [
 					...oldList,
 					{
@@ -78,13 +91,13 @@ function CreateCourse() {
 							// style={{ color: "rgba(0, 0, 0, 0.5)" }}
 							className="input_style"
 						>
-							<option value="" selected hidden>
+							<option value="" defaultValue={true} hidden>
 								Select a theme
 							</option>
 							{/* BOUCLER SUR LES THEMES */}
 							{availableThemes.map((theme) => {
 								return (
-									<option value={theme.id}>
+									<option value={theme.id} key={theme.id}>
 										{theme.name}
 									</option>
 								);
@@ -101,7 +114,11 @@ function CreateCourse() {
 					</div>
 					<div>
 						<div className="file_drop_zone">
-							<input type="file" onChange={handleFile} unique />
+							<input
+								type="file"
+								onChange={handleFile}
+								unique="true"
+							/>
 							<p>Select a file to add</p>
 						</div>
 						<div className="file_list">
@@ -109,8 +126,22 @@ function CreateCourse() {
 							<div>
 								{droppedFiles.map((file) => {
 									return (
-										<div className="file_list_element">
+										<div
+											className="file_list_element"
+											key={droppedFiles.indexOf(file)}
+										>
 											<p>{file.name}</p>
+											<div
+												className="delete_container"
+												onClick={() => {
+													deleteFile(file);
+												}}
+											>
+												<img
+													src={Delete}
+													alt="cross to delete the imported file"
+												/>
+											</div>
 										</div>
 									);
 								})}
