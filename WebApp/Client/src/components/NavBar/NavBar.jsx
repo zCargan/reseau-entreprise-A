@@ -1,4 +1,5 @@
 import "./NavBar.scss";
+import { connect } from "react-redux";
 
 //dependencies
 import { Link } from "react-router-dom";
@@ -6,8 +7,9 @@ import { Link } from "react-router-dom";
 //svg's
 import { ReactComponent as DownArrow } from "../../assets/icons/down-icon.svg";
 import { ReactComponent as LangIcon } from "../../assets/icons/language-icon.svg";
+import { getDataFormation } from "../../action/formationAction";
 
-function NavBar() {
+function NavBar(props) {
 	return (
 		<div className="navbar-main-div">
 			<div className="navbar-logo">
@@ -16,7 +18,12 @@ function NavBar() {
 				</Link>
 			</div>
 			<div className="navbar-links">
-				<div className="nav-links-items">
+				<div
+					className="nav-links-items"
+					onClick={() => {
+						props.getFormations();
+					}}
+				>
 					<Link to="/website/domain">domaines</Link>
 				</div>
 				<div className="navbar-lang">
@@ -50,5 +57,17 @@ const LangDropdown = () => {
 		</div>
 	);
 };
+const mapStateToProps = (state) => {
+	return {
+		formations: state.formationState.formations,
+	};
+};
 
-export default NavBar;
+const mapStateToDispatch = (dispatch) => {
+	return {
+		getFormations: () => dispatch(getDataFormation()),
+	};
+};
+
+const connector = connect(mapStateToProps, mapStateToDispatch);
+export default connector(NavBar);
