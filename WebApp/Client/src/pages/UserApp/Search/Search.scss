@@ -1,5 +1,9 @@
 @import "../../../styles/variables.scss";
 
+.container {
+	margin-top: 70px;
+}
+
 .search__container {
 	font-family: $text-police;
 	// border: solid blue 1px;
@@ -10,7 +14,6 @@
 	.search__content {
 		max-width: 1300px;
 		// border: solid black 1px;
-		margin-top: 120px;
 		height: auto;
 		text-align: center;
 		display: flex;
@@ -44,7 +47,7 @@
 				img {
 					// border: solid red 1px;
 					position: absolute;
-					margin-left: 10px ; 
+					margin-left: 10px;
 				}
 				input {
 					width: 100%;
