@@ -1,7 +1,7 @@
 import { ADD_FORMATION, GET_FORMATION } from "./actionTypes";
 import Axios from "axios";
 import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
-const DOMAIN_NAME = `http://localhost:5000`;
+const DOMAIN_NAME = `http://academox.com:5000/api`;
 
 // SEND FORMATION DATA TO THE REDUCER
 export const addDataFormation = createAction(
