@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { ReactComponent as ListIcon } from "@/assets/icons/list-icon.svg";
 import { getDataFormation } from "../../../action/formationAction";
 import { useEffect } from "react";
-function Domain() {
+function Domain(props) {
 	// Contenue de l'affichage d'une formation
 
 	return (

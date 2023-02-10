@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Formations", {
+    await queryInterface.createTable("formations", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = {
       ThemeId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Themes",
+          model: "themes",
           key: "id"
         },
         onUpdate: "CASCADE",
@@ -35,6 +35,6 @@ module.exports = {
     })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Formations")
+    await queryInterface.dropTable("formations")
   }
 }

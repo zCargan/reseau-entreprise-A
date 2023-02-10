@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import GoogleIcon from "@/assets/icons/google-icon.svg";
 import ArrowLeft from "@/assets/icons/arrow-left.svg";
 import Logo from "@/assets/icons/logo.svg";
-import { useState } from "react";
-function Login() {
+import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { getDataFormation } from "../../../action/formationAction";
+
+function Login(props) {
 	const connexion = "Connexion";
 	const inscription = "Inscription";
 
@@ -34,6 +37,9 @@ function Login() {
 			props.signIn(userMail, userPassword);
 		}
 	};
+	useEffect(() => {
+		props.getFormations();
+	}, []);
 	return (
 		<div className="login__container">
 			<div className="login__content">
@@ -96,6 +102,7 @@ function Login() {
 							Se connecter
 						</div>
 					)}
+					<Link to="/dashboard">Test</Link>
 					<div className="login__google">
 						<img src={GoogleIcon} alt="google" />
 						<span>Se connecter avec google</span>
@@ -142,4 +149,18 @@ function Login() {
 	);
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+	return {
+		formations: state.formationState.formations,
+	};
+};
+
+const mapStateToDispatch = (dispatch) => {
+	return {
+		getFormations: () => dispatch(getDataFormation()),
+	};
+};
+
+const connector = connect(mapStateToProps, mapStateToDispatch);
+
+export default connector(Login);

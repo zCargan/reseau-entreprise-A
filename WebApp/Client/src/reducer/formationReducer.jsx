@@ -3,12 +3,14 @@ import { addDataFormation } from "../action/formationAction";
 const initialState = { formations: [], filterFormations: [] };
 
 const formationReducer = createSlice({
-	name: "formation",
+	name: "formations",
 	initialState: initialState,
-	reducer: {},
-	extrareducers: (builder) => {
+	reducers: {},
+	extraReducers: (builder) => {
 		builder
 			.addCase(addDataFormation, (state, action) => {
+				console.log("In reducer");
+				console.log(action.payload);
 				state.formations = action.payload;
 			})
 			.addDefaultCase((state, action) => {
