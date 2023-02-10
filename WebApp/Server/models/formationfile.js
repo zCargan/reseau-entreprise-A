@@ -1,7 +1,7 @@
 "use strict"
 const { Model } = require("sequelize")
 module.exports = (sequelize, DataTypes) => {
-  class FormationFile extends Model {
+  class formation_file extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -9,17 +9,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      FormationFile.belongsTo(models.Formation)
+      formation_file.belongsTo(models.formation)
     }
   }
-  FormationFile.init(
+  formation_file.init(
     {
       filename: DataTypes.STRING
     },
     {
       sequelize,
-      modelName: "FormationFile"
+      modelName: "formation_file"
     }
   )
-  return FormationFile
+  return formation_file
 }

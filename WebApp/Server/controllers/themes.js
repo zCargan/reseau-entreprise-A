@@ -1,13 +1,14 @@
 "use strict"
 
-const { Theme } = require("../models")
+const { theme } = require("../models")
 
 module.exports = {
   async getAllTheme(req, res) {
     try {
-      const theme = await Theme.findAll()
-      res.send(theme)
+      const themeReq = await theme.findAll()
+      res.send(themeReq)
     } catch (err) {
+      console.log(err)
       res.status(500).send({
         error: "An error has occured trying to fetch the users"
       })
@@ -24,7 +25,7 @@ module.exports = {
       }
 
       // check if libelle already exists
-      const libelleExists = await Theme.findOne({
+      const libelleExists = await theme.findOne({
         where: {
           libelle: req.body.libelle
         }
@@ -35,9 +36,10 @@ module.exports = {
         })
       }
 
-      const theme = await Theme.create(req.body)
-      res.send(theme)
+      const themeReq = await theme.create(req.body)
+      res.send(themeReq)
     } catch (err) {
+      console.log(err)
       res.status(500).send({
         error: "An error has occured trying to create the theme"
       })

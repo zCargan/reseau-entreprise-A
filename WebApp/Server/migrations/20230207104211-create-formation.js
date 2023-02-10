@@ -9,11 +9,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ThemeId: {
+      themeId: {
         type: Sequelize.INTEGER,
         references: {
           model: "themes",
-          key: "id"
+          key: "id",
+          as: "themeId"
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE"

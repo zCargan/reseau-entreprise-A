@@ -15,56 +15,56 @@ module.exports = {
 
     await queryInterface.bulkInsert("formations", [
       {
-        ThemeId: 1,
+        themeId: 1,
         description: "Formation en développement web",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 2,
+        themeId: 2,
         description: "Formation en développement mobile",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 3,
+        themeId: 3,
         description: "Formation en réseau",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 4,
+        themeId: 4,
         description: "Formation en administration système",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 5,
+        themeId: 5,
         description: "Formation en sécurité",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 6,
+        themeId: 6,
         description: "Formation en mathématiques",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 7,
+        themeId: 7,
         description: "Formation en physique",
         price: 1000,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        ThemeId: 8,
+        themeId: 8,
         description: "Formation en Anglais",
         price: 1000,
         createdAt: new Date(),

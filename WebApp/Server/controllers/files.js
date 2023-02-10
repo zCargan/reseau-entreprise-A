@@ -1,12 +1,12 @@
 "use strict"
 
-const { FormationFile, Formation } = require("../models")
+const { formation_file, formation } = require("../models")
 
 module.exports = {
   async getFormationFileByFormationId(req, res) {
     const { id } = req.params
-    const formationFile = await FormationFile.findAll({
-      where: { formationId: id }
+    const formationFile = await formation_file.findAll({
+      where: { formation_id: id }
     })
     res.send(formationFile)
   },
@@ -23,7 +23,7 @@ module.exports = {
     }
 
     // check if formation exists
-    const existingFormation = await Formation.findByPk(id)
+    const existingFormation = await formation.findByPk(id)
     if (!existingFormation) {
       return res.status(400).send({
         message: "formation does not exist"
@@ -32,7 +32,6 @@ module.exports = {
 
     try {
       const fileUrl = `${req.protocol}://${req.get("host")}/uploads/${filename}`
-
       res.status(200).json({ fileUrl })
     } catch (error) {
       console.log(error)

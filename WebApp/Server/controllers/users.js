@@ -1,13 +1,14 @@
 "use strict"
 
-const { User } = require("../models")
+const { user } = require("../models")
 
 module.exports = {
   async getAllUser(req, res) {
     try {
-      const users = await User.findAll()
-      res.send(users)
+      const usersReq = await user.findAll()
+      res.send(usersReq)
     } catch (err) {
+      console.log(err)
       res.status(500).send({
         error: "An error has occured trying to fetch the users"
       })
@@ -16,8 +17,8 @@ module.exports = {
 
   async byId(req, res) {
     try {
-      const user = await User.findByPk(req.params.id)
-      res.send(user)
+      const userReq = await user.findByPk(req.params.id)
+      res.send(userReq)
     } catch (err) {
       res.status(500).send({
         error: "An error has occured trying to fetch the users"
@@ -31,7 +32,7 @@ module.exports = {
         req.body
 
       // check if the username already exists
-      const usernameExists = await User.findOne({
+      const usernameExists = await user.findOne({
         where: {
           username: username
         }
@@ -43,7 +44,7 @@ module.exports = {
       }
 
       // check if the email already exists
-      const emailExists = await User.findOne({
+      const emailExists = await user.findOne({
         where: {
           email: email
         }
@@ -54,7 +55,7 @@ module.exports = {
         })
       }
 
-      const user = await User.create({
+      const userReq = await user.create({
         username,
         rule,
         firstName,
@@ -63,7 +64,7 @@ module.exports = {
         password,
         avatar
       })
-      res.send(user)
+      res.send(userReq)
     } catch (err) {
       res.status(500).send({
         error: "An error has occured trying to create the user"
@@ -73,7 +74,7 @@ module.exports = {
 
   async getAllTrainers(req, res) {
     try {
-      const trainers = await User.findAll({
+      const trainers = await user.findAll({
         where: {
           rule: "trainer"
         }
@@ -90,12 +91,13 @@ module.exports = {
   async login(req, res) {
     try {
       const { email, password } = req.body
-      const user = await User.findOne({
+      const userReq = await user.findOne({
         where: {
           email: email
         }
       })
-      if (!user) {
+      if (!userReq) {
+        console.log(userReq)
         return res.status(403).send({
           error: "The login information was incorrect"
         })
@@ -103,6 +105,7 @@ module.exports = {
 
       const isPasswordValid = password === user.password
       if (!isPasswordValid) {
+        console.log(isPasswordValid)
         return res.status(403).send({
           error: "The login information was incorrect"
         })

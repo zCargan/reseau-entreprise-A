@@ -1,12 +1,12 @@
 "use strict"
 
-const { Formation, User, Theme } = require("../models")
+const { formation, user, theme } = require("../models")
 
 module.exports = {
   async getAll(req, res) {
     try {
-      const formation = await Formation.findAll()
-      res.send(formation)
+      const formationReq = await formation.findAll()
+      res.send(formationReq)
     } catch (err) {
       console.log(err)
       res.status(500).send({
@@ -17,8 +17,8 @@ module.exports = {
 
   async byId(req, res) {
     try {
-      const formation = await Formation.findByPk(req.params.id)
-      res.send(formation)
+      const formationReq = await formation.findByPk(req.params.id)
+      res.send(formationReq)
     } catch (err) {
       res.status(500).send({
         error: "An error has occured trying to fetch the users"
@@ -38,7 +38,7 @@ module.exports = {
       }
 
       // check if the user already exists
-      const idUserExists = await User.findByPk(idUser)
+      const idUserExists = await user.findByPk(idUser)
       if (!idUserExists) {
         return res.status(403).send({
           error: "The user does not exist"
@@ -46,20 +46,20 @@ module.exports = {
       }
 
       // check if the theme already exists
-      const themeIdExists = await Theme.findByPk(idTheme)
+      const themeIdExists = await theme.findByPk(idTheme)
       if (!themeIdExists) {
         return res.status(403).send({
           error: "The theme does not exist"
         })
       }
 
-      const formation = await Formation.create({
+      const formationReq = await formation.create({
         idUser: parseInt(idUser),
         ThemeId: parseInt(idTheme),
         description,
         price
       })
-      res.send(formation)
+      res.send(formationReq)
     } catch (err) {
       res.status(500).send({
         error: "An error has occured trying to create the formation"
